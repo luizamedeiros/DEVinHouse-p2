@@ -10,8 +10,8 @@ function App() {
   return (
     <>
       <GlobalStyle/>
-      <Header/>
       <Router>
+        <Header/>
         <Switch>
           <Route exact path="/">
             <MsgForm />

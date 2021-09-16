@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import InputContainer from './InputContainer';
 import Swal from 'sweetalert2';
-import TitleDiv from './TitleDiv';
-import api from '../../services/api';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, IconButton} from '@material-ui/core'
+import api from '../../services/api';
+import InputContainer from './InputContainer';
+import TitleDiv from './TitleDiv';
 
 const MsgDiv = styled.div`
     width: 70%;
@@ -59,7 +59,11 @@ const MsgForm = () =>{
                                 <TableCell align='center'> {msg.trigger} </TableCell>
                                 <TableCell align='center'>{msg.channel}</TableCell>
                                 <TableCell align='center'>{msg.timer}</TableCell>
-                                <TableCell align='center'> <IconButton onClick={()=>{Swal.fire(msg.message)}}> <VisibilityIcon/> </IconButton></TableCell>
+                                <TableCell align='center'> 
+                                    <IconButton onClick={()=>{Swal.fire(msg.message)}}> 
+                                        <VisibilityIcon/> 
+                                    </IconButton>
+                                </TableCell>
                             </TableRow>))}
                     </TableBody>
                 </Table>

@@ -1,0 +1,9 @@
+.headerLink{
+    font-size: 1.4vw;
+    color: white;
+    text-decoration: none; 
+}
+
+.headerUL{
+    align-items: center;
+}

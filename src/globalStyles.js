@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
     nav{
         display: flex;
         width: 100%;
-        background-color: #1D69B4;
+        background-color: #181F75;
         margin-bottom: 5%;
     }
     ul{

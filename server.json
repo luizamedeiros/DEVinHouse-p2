@@ -55,6 +55,27 @@
       "timer": "543213",
       "message": "df djlfng",
       "id": 1631313726741
+    },
+    {
+      "trigger": "alterou_dados_pessois",
+      "channel": "whatsapp",
+      "timer": "22",
+      "message": "5216916",
+      "id": 1631313726742
+    },
+    {
+      "trigger": "alterou_dados_pessois",
+      "channel": "email",
+      "timer": "22",
+      "message": "OOOIIIIIII",
+      "id": 1631313726743
+    },
+    {
+      "trigger": "fez_pix",
+      "channel": "whatsapp",
+      "timer": "22",
+      "message": "uhibljkn",
+      "id": 1631313726744
     }
   ],
   "channels": [

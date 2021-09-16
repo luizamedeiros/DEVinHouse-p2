@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import styled from 'styled-components';
 import api from '../../services/api';
 import Swal from 'sweetalert2';
+import {Link} from 'react-router-dom';
 
 const InputMsgForm = styled.form`
     background: #DFDFDF;
@@ -94,14 +95,15 @@ function InputMsg(){
                 timer: timer, 
                 message: message
             })
-            Swal.fire("Seu registro foi cadastrado com sucesso!");
-            setTrigger(' ');
-            setChannel(' ');
-            setTimer(' ');
-            setMessage(' ');
+            Swal.fire({
+                icon: 'success',
+                text: "Seu registro foi cadastrado com sucesso!"});
+            <Link to="/mensagens"/>
         }
         catch{
-            Swal.fire("Houve um problema com o seu cadastro. Tente novamente mais tarde.")
+            Swal.fire({
+                icon: 'error',
+                text: "Houve um problema com o seu cadastro. Tente novamente mais tarde."})
         }
     }
     
