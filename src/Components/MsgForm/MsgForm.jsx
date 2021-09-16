@@ -6,13 +6,14 @@ import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, IconBu
 import api from '../../services/api';
 import InputContainer from './InputContainer';
 import TitleDiv from './TitleDiv';
+import './msgFormStyles.css';
 
 const MsgDiv = styled.div`
     width: 70%;
     padding: 2%;
     min-height: 50vh;
-    background: #97C4EF;
-    border-radius: 8px;
+    border: #181f75 2px solid;
+    border-radius: 4px;
     margin: auto;
     `
 
@@ -43,12 +44,12 @@ const MsgForm = () =>{
             <InputContainer />
             <TableContainer>
                 <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell align='center'>Gatilho</TableCell>
-                            <TableCell align='center'>Canal</TableCell>
-                            <TableCell align='center'>Timer</TableCell>
-                            <TableCell align='center'>Mensagem</TableCell>
+                    <TableHead className="tableHead">
+                        <TableRow className="tableHead">
+                            <TableCell className="tableHeadCell">Gatilho</TableCell>
+                            <TableCell className="tableHeadCell">Canal</TableCell>
+                            <TableCell className="tableHeadCell">Timer</TableCell>
+                            <TableCell className="tableHeadCell">Mensagem</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -61,7 +62,7 @@ const MsgForm = () =>{
                                 <TableCell align='center'>{msg.timer}</TableCell>
                                 <TableCell align='center'> 
                                     <IconButton onClick={()=>{Swal.fire(msg.message)}}> 
-                                        <VisibilityIcon/> 
+                                        <VisibilityIcon style={{color: '#181f75'}}/> 
                                     </IconButton>
                                 </TableCell>
                             </TableRow>))}

@@ -15,6 +15,7 @@ const MainHeader = styled.div`
 const MsgTitle = styled.h1`
     margin-right: 50%;
     margin-top: 0%;
+    color: #181f75;
     `
 
 function TitleDiv(){
@@ -22,10 +23,10 @@ function TitleDiv(){
         <MainHeader>
             <MsgTitle>Mensagens</MsgTitle>
             <Link to="#">
-                <IconButton> <SearchIcon/> </IconButton>
+                <IconButton> <SearchIcon style={{color: '#181f75'}}/> </IconButton>
             </Link>
             <Link to="/novamensagem">
-                <IconButton> <AddCommentIcon /> </IconButton>
+                <IconButton> <AddCommentIcon style={{color: '#181f75'}}/> </IconButton>
             </Link>
         </MainHeader>
         

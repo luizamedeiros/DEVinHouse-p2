@@ -5,7 +5,8 @@ import Swal from 'sweetalert2';
 import {Link} from 'react-router-dom';
 
 const InputMsgForm = styled.form`
-    background: #DFDFDF;
+    background: white;
+    border: #181f75 4px solid;
     border-radius: 8px;
     margin: auto;
     padding: 1%;
@@ -18,14 +19,14 @@ const DescriptionArea = styled.textarea`
     width: 90%;
     height: 30vh;
     margin: 2% auto auto auto;
-    border: none;
+    border: #181f75 2px solid;
     border-radius: 4px;
 `
 const SubmitButton = styled.button`
     align-self: flex-end;
-    background: #1D69B4;
-    border: none;
-    border-radius: 6px;
+    background: #181f75;
+    border: #181f75 2px solid;
+    border-radius: 4px;
     color: white;
     margin: 1%;
     padding: 2%;
@@ -36,9 +37,10 @@ const SubmitButton = styled.button`
 const CancelButton = styled.button`
     align-self: flex-end;
     background: white;
-    border: #1D69B4;
-    border-radius: 6px;
-    color: #1D69B4;
+    border: #181f75 2px solid;
+    border-radius: 4px;
+    color: #181f75;
+    font-weight: bold;
     margin: auto;
     padding: 2%;
     &:hover{
@@ -51,6 +53,7 @@ const ButtonContainer = styled.div`
 `
 const Title = styled.h1`
     margin-left: 5%;
+    color: #181f75;
 `
 const InputDiv = styled.div`
     width: 100%;
