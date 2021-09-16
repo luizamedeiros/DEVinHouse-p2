@@ -43,32 +43,18 @@
       "id": 1631313726739
     },
     {
-      "channel": "asdfa",
-      "trigger": "asdfas",
-      "timer": "asdfa",
-      "message": "asdfasd",
+      "trigger": "alterou_dados_pessois",
+      "channel": "whatsapp",
+      "timer": [],
+      "message": "dassad",
       "id": 1631313726740
     },
     {
-      "trigger": "4",
-      "channel": "333",
-      "timer": "33",
-      "message": "dfsdfws",
+      "trigger": "deletou_chave_pix",
+      "channel": "email",
+      "timer": "543213",
+      "message": "df djlfng",
       "id": 1631313726741
-    },
-    {
-      "trigger": "4",
-      "channel": "333",
-      "timer": "33",
-      "message": "dfsdfws",
-      "id": 1631313726742
-    },
-    {
-      "trigger": "fez_pix",
-      "channel": "222",
-      "timer": "8",
-      "message": "kihklh",
-      "id": 1631313726743
     }
   ],
   "channels": [

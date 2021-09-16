@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import styled from 'styled-components';
 import api from '../../services/api';
+import Swal from 'sweetalert2';
 
 const InputMsgForm = styled.form`
     background: #DFDFDF;
@@ -85,17 +86,23 @@ function InputMsg(){
     }, []);
 
     function handleSubmit(e){
-        e.preventDefault();
-        const response = api.post('/messages', {
-            trigger: trigger,
-            channel: channel, 
-            timer: timer, 
-            message: message
-        })
-        setTrigger(' ');
-        setChannel(' ');
-        setTimer(' ');
-        setMessage(' ');
+        try{
+            e.preventDefault();
+            api.post('/messages', {
+                trigger: trigger,
+                channel: channel, 
+                timer: timer, 
+                message: message
+            })
+            Swal.fire("Seu registro foi cadastrado com sucesso!");
+            setTrigger(' ');
+            setChannel(' ');
+            setTimer(' ');
+            setMessage(' ');
+        }
+        catch{
+            Swal.fire("Houve um problema com o seu cadastro. Tente novamente mais tarde.")
+        }
     }
     
     return(

@@ -30,7 +30,7 @@ const MsgForm = () =>{
                 message: msg.message
             };
         });
-        setMessages(newMessage);
+        setMessages(...messages, newMessage);
         };
         accessAPI();
     }, []);
