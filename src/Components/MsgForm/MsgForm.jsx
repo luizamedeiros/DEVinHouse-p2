@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import InputContainer from './InputContainer';
+import Swal from 'sweetalert2';
 import TitleDiv from './TitleDiv';
 import api from '../../services/api';
-import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@material-ui/core'
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, IconButton} from '@material-ui/core'
 
 const MsgDiv = styled.div`
     width: 70%;
@@ -30,7 +32,7 @@ const MsgForm = () =>{
                 message: msg.message
             };
         });
-        setMessages(...messages, newMessage);
+        setMessages(newMessage);
         };
         accessAPI();
     }, []);
@@ -51,17 +53,13 @@ const MsgForm = () =>{
                     </TableHead>
                     <TableBody>
                         <TableRow>
-                            <TableCell>lsdn</TableCell>
-                            <TableCell align='center'>dfxgd</TableCell>
-                            <TableCell align='center'>gfd</TableCell>
-                            <TableCell align='center'>fdsgdf</TableCell>
                         </TableRow>
                         {messages.map((msg)=>(
                             <TableRow>
                                 <TableCell align='center'> {msg.trigger} </TableCell>
                                 <TableCell align='center'>{msg.channel}</TableCell>
                                 <TableCell align='center'>{msg.timer}</TableCell>
-                                <TableCell align='center'>{msg.message}</TableCell>
+                                <TableCell align='center'> <IconButton onClick={()=>{Swal.fire(msg.message)}}> <VisibilityIcon/> </IconButton></TableCell>
                             </TableRow>))}
                     </TableBody>
                 </Table>

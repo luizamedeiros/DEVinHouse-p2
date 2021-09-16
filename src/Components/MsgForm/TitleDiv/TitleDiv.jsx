@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import SearchIcon from '@material-ui/icons/Search';
 import AddCommentIcon from '@material-ui/icons/AddComment';
 import { IconButton } from '@material-ui/core';
-import InputMsg from '../../MsgForm/InputContainer';
 
 const MainHeader = styled.div`
     width: 90%;
