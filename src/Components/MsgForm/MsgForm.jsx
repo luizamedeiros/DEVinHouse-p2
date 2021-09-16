@@ -21,7 +21,7 @@ const MsgForm = () =>{
         api
           .get("http://localhost:3333/messages")
           .then((res) => setMessages(res.data));
-      }, []);
+    }, []);
 
     return(
         <MsgDiv>
@@ -44,14 +44,13 @@ const MsgForm = () =>{
                             <TableCell align='center'>gfd</TableCell>
                             <TableCell align='center'>fdsgdf</TableCell>
                         </TableRow>
-                        {messages.map((msg)=>{
-                            {console.log(msg)}
+                        {messages.map((msg)=>(
                             <TableRow key={msg.id}>
                                 <TableCell >{msg.trigger}</TableCell>
                                 <TableCell align='center'>{msg.channel}</TableCell>
                                 <TableCell align='center'>{msg.timer}</TableCell>
                                 <TableCell align='center'>{msg.message}</TableCell>
-                            </TableRow>})}
+                            </TableRow>))}
                     </TableBody>
                 </Table>
             </TableContainer>
