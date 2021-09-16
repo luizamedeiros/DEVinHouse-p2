@@ -18,9 +18,21 @@ const MsgForm = () =>{
     const [messages, setMessages] = useState([]);
 
     useEffect(() => {
-        api
-          .get("http://localhost:3333/messages")
-          .then((res) => setMessages(res.data));
+        const accessAPI = async ()=>{
+        const allMessages = await api.get("http://localhost:3333/messages");
+
+        const newMessage = allMessages.data.map((msg)=>{
+            return{
+                id: msg.id,
+                channel: msg.channel,
+                trigger: msg.trigger,
+                timer: msg.timer,
+                message: msg.message
+            };
+        });
+        setMessages(newMessage);
+        };
+        accessAPI();
     }, []);
 
     return(
@@ -45,8 +57,8 @@ const MsgForm = () =>{
                             <TableCell align='center'>fdsgdf</TableCell>
                         </TableRow>
                         {messages.map((msg)=>(
-                            <TableRow key={msg.id}>
-                                <TableCell >{msg.trigger}</TableCell>
+                            <TableRow>
+                                <TableCell align='center'> {msg.trigger} </TableCell>
                                 <TableCell align='center'>{msg.channel}</TableCell>
                                 <TableCell align='center'>{msg.timer}</TableCell>
                                 <TableCell align='center'>{msg.message}</TableCell>

@@ -80,8 +80,7 @@ function InputMsg(){
     }, []);
 
     useEffect(() => {
-        api
-        .get("http://localhost:3333/channels")
+        api.get("http://localhost:3333/channels")
         .then((res) => setChannelsList(res.data));
     }, []);
 
@@ -93,6 +92,10 @@ function InputMsg(){
             timer: timer, 
             message: message
         })
+        setTrigger(' ');
+        setChannel(' ');
+        setTimer(' ');
+        setMessage(' ');
     }
     
     return(
@@ -104,7 +107,7 @@ function InputMsg(){
                     }} required>
                         <option value=""></option>
                         {triggerList.map((op) => (
-                        <option key={op.id} value={op.id}>
+                        <option key={op.id} value={op.name}>
                             {op.name}
                         </option>))}
                     </select>
@@ -113,7 +116,7 @@ function InputMsg(){
                     }}>
                     <option value=""></option>
                         {channelsList.map((op) => (
-                        <option key={op.id} value={op.id}>
+                        <option key={op.id} value={op.name}>
                             {op.name}
                         </option>))}               
                     </select>
