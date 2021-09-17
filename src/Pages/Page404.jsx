@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Warning = styled.h1`
+    text-align: center;
+`
 
 const Page404 =() =>{
     return(
         <div>
-            <h1>Opa! A página não existe!</h1>
+            <Warning>Opa! A página não existe!</Warning>
         </div>
     );
 }

@@ -135,7 +135,9 @@ function InputMsg(){
                     <input 
                     value={timer}
                     name="timer" 
-                    type="number" 
+                    type="time" 
+                    min='00:00'
+                    max='360000:00'
                     placeholder="Timer"
                     onChange={(e)=>{
                         setTimer(e.target.value)
