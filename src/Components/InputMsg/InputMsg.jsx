@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import api from '../../services/api';
 import Swal from 'sweetalert2';
 import {Link} from 'react-router-dom';
+import {useHistory} from "react-router";
 
 const InputMsgForm = styled.form`
     background: white;
@@ -101,7 +102,6 @@ function InputMsg(){
             Swal.fire({
                 icon: 'success',
                 text: "Seu registro foi cadastrado com sucesso!"});
-            <Link to="/mensagens"/>
         }
         catch{
             Swal.fire({
@@ -149,7 +149,9 @@ function InputMsg(){
                     setMessage(e.target.value);
                 }}/>
                 <ButtonContainer>
-                    <CancelButton>Cancelar</CancelButton>
+                    <Link to='/'>
+                        <CancelButton>Cancelar</CancelButton>
+                    </Link>
                     <SubmitButton type="submit">Salvar</SubmitButton>
                 </ButtonContainer>
             </InputMsgForm>

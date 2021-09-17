@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+    h1, h2, h3, h4, h5, h6, a, p, button, li, ul, nav, th, td, tr{
+        font-family: 'Raleway', sans-serif;
+    }
     nav{
         display: flex;
         width: 100%;

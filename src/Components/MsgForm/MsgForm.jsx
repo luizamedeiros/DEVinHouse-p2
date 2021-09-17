@@ -44,12 +44,12 @@ const MsgForm = () =>{
             <InputContainer />
             <TableContainer>
                 <Table>
-                    <TableHead className="tableHead">
-                        <TableRow className="tableHead">
-                            <TableCell className="tableHeadCell">Gatilho</TableCell>
-                            <TableCell className="tableHeadCell">Canal</TableCell>
-                            <TableCell className="tableHeadCell">Timer</TableCell>
-                            <TableCell className="tableHeadCell">Mensagem</TableCell>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell style={{color:'white', textAlign: 'center'}}>Gatilho</TableCell>
+                            <TableCell style={{color:'white', textAlign: 'center'}}>Canal</TableCell>
+                            <TableCell style={{color:'white', textAlign: 'center'}}>Timer</TableCell>
+                            <TableCell style={{color:'white', textAlign: 'center'}}>Mensagem</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>

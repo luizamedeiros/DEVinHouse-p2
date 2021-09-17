@@ -7,6 +7,7 @@ const InputDiv = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 3vh;
 `
 
 const InputContainer=()=>{
