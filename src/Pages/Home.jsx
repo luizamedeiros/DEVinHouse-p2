@@ -8,7 +8,6 @@ const Home = ()=>{
     useEffect(() => {
         const accessAPI = async ()=>{
         const allMessages = await api.get("http://localhost:3333/messages");
-
         const newMessage = allMessages.data.map((msg)=>{
             return{
                 id: msg.id
@@ -21,7 +20,7 @@ const Home = ()=>{
 
     return(
             <>
-            <h1>Bem vindo! Você tem {messages.length} novas mensagens!</h1>
+            <h1 style={{textAlign: 'center'}}>Bem vindo! Você tem {messages.length} novas mensagens!</h1>
             </>
     );
 }

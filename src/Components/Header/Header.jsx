@@ -22,7 +22,7 @@ const Header = () =>{
                     <Link to="/dashboard" className="headerLink">Dashboard</Link>
                 </List>
                 <List> 
-                    <Link to='/' className="headerLink"> Mensagens </Link> 
+                    <Link to='/mensagens' className="headerLink"> Mensagens </Link> 
                 </List>
             </ul>
         </nav>

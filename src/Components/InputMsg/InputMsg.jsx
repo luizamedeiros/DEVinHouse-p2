@@ -151,7 +151,7 @@ function InputMsg(){
                     setMessage(e.target.value);
                 }}/>
                 <ButtonContainer>
-                    <Link to='/'>
+                    <Link to='/mensagens'>
                         <CancelButton>Cancelar</CancelButton>
                     </Link>
                     <SubmitButton type="submit">Salvar</SubmitButton>
