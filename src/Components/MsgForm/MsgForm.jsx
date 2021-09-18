@@ -15,7 +15,7 @@ const MsgDiv = styled.div`
     border: #181f75 2px solid;
     border-radius: 4px;
     margin: auto;
-    `
+`
 
 const MsgForm = () =>{
     const [messages, setMessages] = useState([]);

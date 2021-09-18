@@ -17,7 +17,7 @@ const Header = () =>{
     return(
         <nav>
             <ul className="headerUL">
-                <List><img src={logoOutline} alt="logo da Conta Zap"/></List>
+                <List><Link to="/" className=""><img src={logoOutline} alt="logo da Conta Zap"/></Link></List>
                 <List>
                     <Link to="/dashboard" className="headerLink">Dashboard</Link>
                 </List>

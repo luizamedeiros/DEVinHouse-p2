@@ -5,7 +5,7 @@ import BarGraph from '../Components/Graphs/BarGraph';
 
 const GraphWrapper = styled.div`
     height: 40%;
-    width: 60%;
+    width: 50%;
     margin: auto;
     padding: 3%;
     border: 2px solid #181f75;

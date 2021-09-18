@@ -6,6 +6,7 @@ import Dashboard from './Pages/Dashboard';
 import InputMsg from './Components/InputMsg';
 import GlobalStyle from './globalStyles.js';
 import Page404 from './Pages/Page404';
+import Home from './Pages/Home';
 
 function App() {
   return (
@@ -14,7 +15,10 @@ function App() {
       <Router>
         <Header/>
         <Switch>
-          <Route exact path="/">
+        <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/mensagens">
             <MsgForm />
           </Route>
           <Route path="/novamensagem">

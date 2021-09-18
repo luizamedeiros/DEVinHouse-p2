@@ -1,7 +1,26 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Bar} from 'react-chartjs-2';
+import api from '../../services/api';
 
 const BarGraph = ()=>{
+    const [channels, setChannels] = useState([]);
+    const channelList = [];
+    makeData();
+    //channelCounter();
+
+    useEffect(() => {
+        api
+          .get("http://localhost:3333/channels")
+          .then((res) => setChannels(res.data));
+      }, []
+    );
+
+    function makeData(){
+        channels.map((channel)=>(
+            channelList.push(channel.name)
+        ));
+    }
+
 
     function generateRandom(){
         var randomNumbers = [];
@@ -13,11 +32,9 @@ const BarGraph = ()=>{
     }
 
     const info = {
-        labels: [
-            'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio','Junho', 'Julho', 'Julho', 'Agosto', 'Setembro'
-        ],
+        labels: channelList,
         datasets: [{
-            label: 'Quantidade de depósitos', 
+            label: 'Quantidade de chamados por canal', 
             data: generateRandom(),
             backgroundColor: '#181f75'}
         ]
