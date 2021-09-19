@@ -16,6 +16,18 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 1%;
         width: 100%;
+        overflow: hidden;
+    }
+    button{
+        align-self: flex-end;
+        background: #181f75;
+        border: #181f75 2px solid;
+        border-radius: 4px;
+        color: white;
+        margin: 1%;
+        &:hover{
+            cursor: pointer;
+        }
     }
 `
 export default GlobalStyle;

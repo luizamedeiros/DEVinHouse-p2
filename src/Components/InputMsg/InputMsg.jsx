@@ -1,66 +1,9 @@
 import React,{useState, useEffect} from 'react';
-import styled from 'styled-components';
 import api from '../../services/api';
 import Swal from 'sweetalert2';
 import {Link} from 'react-router-dom';
-import {useHistory} from "react-router";
+import {InputMsgForm, DescriptionArea, SubmitButton, CancelButton, ButtonContainer, Title, SelectDiv} from './InputMsgStyle';
 
-const InputMsgForm = styled.form`
-    background: white;
-    border: #181f75 4px solid;
-    border-radius: 8px;
-    margin: auto;
-    padding: 1%;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-`
-
-const DescriptionArea = styled.textarea`
-    width: 90%;
-    height: 30vh;
-    margin: 2% auto auto auto;
-    border: #181f75 2px solid;
-    border-radius: 4px;
-`
-const SubmitButton = styled.button`
-    align-self: flex-end;
-    background: #181f75;
-    border: #181f75 2px solid;
-    border-radius: 4px;
-    color: white;
-    margin: 1%;
-    padding: 2%;
-    &:hover{
-        cursor: pointer;
-    }
-`
-const CancelButton = styled.button`
-    align-self: flex-end;
-    background: white;
-    border: #181f75 2px solid;
-    border-radius: 4px;
-    color: #181f75;
-    font-weight: bold;
-    margin: auto;
-    padding: 2%;
-    &:hover{
-        cursor: pointer;
-    }
-`
-const ButtonContainer = styled.div`
-    margin-right: 5%;
-    text-align: right;
-`
-const Title = styled.h1`
-    margin-left: 5%;
-    color: #181f75;
-`
-const InputDiv = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-`
 
 function InputMsg(){
     // para CONSUMIR
@@ -113,7 +56,7 @@ function InputMsg(){
     return(
             <InputMsgForm onSubmit={handleSubmit}>
                 <Title>Nova mensagem</Title>
-                <InputDiv>
+                <SelectDiv>
                     <select onChange={(e)=>{
                         setTrigger(e.target.value);
                     }} required>
@@ -143,7 +86,7 @@ function InputMsg(){
                         setTimer(e.target.value)
                     }}
                     />
-                </InputDiv>
+                </SelectDiv>
                 <DescriptionArea
                 name="message"
                 placeholder="Digite sua mensagem"

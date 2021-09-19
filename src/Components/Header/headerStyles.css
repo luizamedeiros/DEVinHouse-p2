@@ -6,4 +6,9 @@
 
 .headerUL{
     align-items: center;
+    flex-wrap: wrap;
 }
+@media screen and (max-width: 768px){
+    .headerLink{
+    font-size: 3vw;
+}}

@@ -7,10 +7,13 @@ import './headerStyles.css';
 export const List = styled.li`
     padding-left: 2.3vw;
     &:nth-child(2){
-        margin-left: 70%;
+        margin-left: 55%;
     }
-    &:nth-child(1){
-        margin-left: 1%;
+    @media screen and (max-width: 768px){
+        &:nth-child(2){
+            margin-left: 20%;
+        }
+    }
 `
 
 const Header = () =>{
@@ -23,6 +26,9 @@ const Header = () =>{
                 </List>
                 <List> 
                     <Link to='/mensagens' className="headerLink"> Mensagens </Link> 
+                </List>
+                <List> 
+                    <Link to='/admin' className="headerLink"> Administrador </Link> 
                 </List>
             </ul>
         </nav>

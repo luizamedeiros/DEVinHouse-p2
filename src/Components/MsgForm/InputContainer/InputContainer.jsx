@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import api from '../../../services/api';
 
-
 const InputDiv = styled.div`
     width: 100%;
     display: flex;
@@ -14,13 +13,6 @@ const InputContainer=()=>{
     const [triggers, setTriggers] = useState([]);
     const [channels, setChannels]  = useState([]);
     const [timer, setTimer] = useState([]);
-    const [messages, setMessages] = useState([]);
-
-    useEffect(() => {
-        api
-          .get("http://localhost:3333/messages")
-          .then((res) => setMessages(res.data));
-      }, []);
     
       useEffect(() => {
         api

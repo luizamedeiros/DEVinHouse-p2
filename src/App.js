@@ -7,6 +7,7 @@ import InputMsg from './Components/InputMsg';
 import GlobalStyle from './globalStyles.js';
 import Page404 from './Pages/Page404';
 import Home from './Pages/Home';
+import Admin from './Pages/Admin';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/dashboard">
             <Dashboard/>
+          </Route>
+          <Route path="/admin">
+            <Admin/>
           </Route>
           <Route>
             <Page404 />

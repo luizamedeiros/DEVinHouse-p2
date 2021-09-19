@@ -27,13 +27,6 @@
       "trigger": "criou_chave_pix",
       "timer": "12:00",
       "message": "vI  que você criou um chave ?"
-    },
-    {
-      "trigger": "recarregou_celular",
-      "channel": "whatsapp",
-      "timer": "22",
-      "message": "OI RE ",
-      "id": 1631312843769
     }
   ],
   "channels": [
@@ -48,6 +41,14 @@
     {
       "id": 333,
       "name": "sms"
+    },
+    {
+      "id": 1632074496282,
+      "name": "ligação"
+    },
+    {
+      "id": 1632083045466,
+      "name": "telegram"
     }
   ],
   "triggers": [
@@ -86,6 +87,10 @@
     {
       "id": 9,
       "name": "falou_com_atendimento"
+    },
+    {
+      "id": 1632083142727,
+      "name": "fez_reclamação"
     }
   ]
 }
