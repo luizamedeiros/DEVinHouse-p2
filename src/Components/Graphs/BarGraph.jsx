@@ -10,7 +10,6 @@ const BarGraph = ()=>{
     useEffect(() => {
         api.get("http://localhost:3333/channels")
           .then((res) => setChannels(res.data));
-          makeData();
       }, []
     );
 
@@ -18,7 +17,6 @@ const BarGraph = ()=>{
         channels.map((channel)=>(
             channelList.push(channel.name)
         ));
-        console.log('channel list is', channelList)
     }
 
     function generateRandom(){

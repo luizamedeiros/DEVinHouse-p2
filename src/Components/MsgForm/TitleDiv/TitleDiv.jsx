@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import SearchIcon from '@material-ui/icons/Search';
 import AddCommentIcon from '@material-ui/icons/AddComment';

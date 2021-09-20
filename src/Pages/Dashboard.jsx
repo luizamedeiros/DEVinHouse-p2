@@ -7,6 +7,7 @@ const GraphWrapper = styled.div`
     width: 80%;
     margin: auto;
     padding: 3%;
+    flex-wrap: wrap;
     border: 2px solid #181f75;
     border-radius: 6px;
 `

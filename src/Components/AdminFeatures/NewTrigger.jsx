@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import Swal from 'sweetalert2';
 import api from '../../services/api'
