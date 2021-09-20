@@ -5,6 +5,7 @@ import ReactInputMask from 'react-input-mask';
 import SearchIcon from '@material-ui/icons/Search';
 import {IconButton} from '@material-ui/core';
 import {Link} from 'react-router-dom';
+import './InputContainerStyle.css'
 
 const InputDiv = styled.form`
     width: 100%;
@@ -38,7 +39,7 @@ const InputContainer=()=>{
     return(
         <InputDiv>
             <label for='gatilho'>Gatilho</label>
-            <select style={{width: 'inherit'}} name='gatilho' required>
+            <select className="inputItems" name='gatilho' required>
               <option value=""></option>
                 {triggers.map((op) => (
                   <option key={op.id} value={op.id}>
@@ -46,7 +47,7 @@ const InputContainer=()=>{
                   </option>))}
             </select>
             <label for='canal'>Canal</label>
-            <select style={{width: 'inherit'}} required>
+            <select className="inputItems" required>
               <option value=""></option>
                 {channels.map((op) => (
                   <option key={op.id} value={op.id}>
@@ -55,7 +56,7 @@ const InputContainer=()=>{
             </select>
             <label for='timer'>Timer</label>
             <ReactInputMask 
-              style={{width: 'inherit'}}
+              className="inputItems"
               value={timer}
               name="timer" 
               required
@@ -64,7 +65,7 @@ const InputContainer=()=>{
               onChange={(e)=>{
                   setTimer(e.target.value)
               }}
-            />
+              />
             <Link to="#">
               <IconButton> <SearchIcon style={{color: '#181f75'}}/> </IconButton>
             </Link>
