@@ -15,13 +15,13 @@ const MsgForm = () =>{
         Swal.fire({
             icon: 'success',
             text: 'Mensagem deletada!'})
+            window.location.reload()
         }
         catch{
             Swal.fire({
                 icon: 'error',
                 text: 'Não foi possível deletar a mensagem!'})
         }
-
     }
 
     useEffect(() => {
