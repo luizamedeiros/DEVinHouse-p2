@@ -7,7 +7,8 @@ const InputDiv = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 3vh;
+    margin-bottom: 2vh;
+    flex-wrap: wrap;
     @media screen and (max-width: 768px){
       flex-direction: column;
     }
