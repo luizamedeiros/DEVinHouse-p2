@@ -15,3 +15,20 @@ This app was developed for a course project. It could be used in a context for r
 <li> Dashboard development with Chart.js </li>
 <li> Responsive app design, using CSS media queries </li>
 <li> API calls (GET, POST, and DELETE) </li>
+
+## Screenshots
+
+#### Message input screen (desktop & mobile)
+
+<div style="width: 100%;">
+<img style="width: 55%; margin: 2%;" src="public/screenshots/screenshot 2.jpeg"/>;
+<img style="width: 35%;" src="public/screenshots/screenshot 3.jpeg"/>
+  </div>
+  
+#### Messages screen
+<p>Upon clicking on the eye icon, a modal pops up on the screen, showing the content of the message. Messages can be deleted with the trash icon. </p>
+<img src="public/screenshots/screenshot 4.jpeg"/>
+
+
+#### Dashboard
+<img name="dashboard" src="public/screenshots/screenshot 1.jpeg"/>
