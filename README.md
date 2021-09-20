@@ -15,7 +15,7 @@ This app was developed for a course project. It could be used in a context for r
 <li> Dashboard development with Chart.js. </li>
 <li> Responsive app design, using CSS media queries. </li>
 <li> API calls (GET, POST, and DELETE). </li>
-<li> Sweetalert modals. </li>
+<li> Sweetalert 2 modals. </li>
 
 ## Screenshots
 
