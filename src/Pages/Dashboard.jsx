@@ -4,8 +4,7 @@ import LineGraph from '../Components/Graphs/LineGraph';
 import BarGraph from '../Components/Graphs/BarGraph';
 
 const GraphWrapper = styled.div`
-    height: 40%;
-    width: 50%;
+    width: 80%;
     margin: auto;
     padding: 3%;
     border: 2px solid #181f75;
