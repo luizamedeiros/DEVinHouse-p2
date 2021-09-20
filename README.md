@@ -10,11 +10,12 @@ In the project directory, you can run:
 
 ## Context
 
-This app was developed for a course project. It could be used in a context for registering customer support interactions, saving messages to the API. Each message contains an id, a channel through which it came, the trigger/reason the message was sent, time it took to deal with, and the message itself. The goal was to challenge students in:
-<li> Form validations with Yup </li>
-<li> Dashboard development with Chart.js </li>
-<li> Responsive app design, using CSS media queries </li>
-<li> API calls (GET, POST, and DELETE) </li>
+This app was developed for a course project. It could be used in a context for registering technical support interactions, saving messages to the API. Each message contains an id, a channel through which it came, the trigger/reason the message was sent, time it took to deal with, and the message itself. The goal was to challenge students in:
+<li> Form validations with Yup. </li>
+<li> Dashboard development with Chart.js. </li>
+<li> Responsive app design, using CSS media queries. </li>
+<li> API calls (GET, POST, and DELETE). </li>
+<li> Sweetalert modals. </li>
 
 ## Screenshots
 
