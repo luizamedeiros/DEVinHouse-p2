@@ -14,8 +14,9 @@ const MsgForm = () =>{
         api.delete(`http://localhost:3333/messages/${msg.id}`, msg);
         Swal.fire({
             icon: 'success',
-            text: 'Mensagem deletada!'})
-            window.location.reload()
+            text: 'Mensagem deletada!',
+            showConfirmButton: false})
+        window.location.reload()
         }
         catch{
             Swal.fire({

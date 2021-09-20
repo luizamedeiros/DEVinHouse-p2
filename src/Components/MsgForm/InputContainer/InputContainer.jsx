@@ -2,13 +2,17 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import api from '../../../services/api';
 import ReactInputMask from 'react-input-mask';
+import SearchIcon from '@material-ui/icons/Search';
+import {IconButton} from '@material-ui/core';
+import {Link} from 'react-router-dom';
 
-const InputDiv = styled.div`
+const InputDiv = styled.form`
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 2vh;
     flex-wrap: wrap;
+    align-items: center;
     @media screen and (max-width: 768px){
       flex-direction: column;
     }
@@ -60,6 +64,9 @@ const InputContainer=()=>{
                         setTimer(e.target.value)
                     }}
                     />
+            <Link to="#">
+              <IconButton> <SearchIcon style={{color: '#181f75'}}/> </IconButton>
+            </Link>
         </InputDiv>
     );
 }
