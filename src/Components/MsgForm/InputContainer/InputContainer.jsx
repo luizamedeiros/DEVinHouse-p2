@@ -1,12 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import api from '../../../services/api';
+import ReactInputMask from 'react-input-mask';
 
 const InputDiv = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 3vh;
+    @media screen and (max-width: 768px){
+      flex-direction: column;
+    }
 `
 
 const InputContainer=()=>{
@@ -28,27 +32,33 @@ const InputContainer=()=>{
 
     return(
         <InputDiv>
-            <select required>
+            <label for='gatilho'>Gatilho</label>
+            <select name='gatilho' required>
+              <option value=""></option>
                 {triggers.map((op) => (
                   <option key={op.id} value={op.id}>
                     {op.name}
                   </option>))}
             </select>
+            <label for='canal'>Canal</label>
             <select required>
+              <option value=""></option>
                 {channels.map((op) => (
                   <option key={op.id} value={op.id}>
                     {op.name}
                   </option>))}               
             </select>
-            <input 
-            value={timer}
-            name="timer" 
-            type="number" 
-            placeholder="Timer"
-            onChange={(e)=>{
-                setTimer(e.target.value)
-            }}
-            />
+            <label for='timer'>Timer</label>
+            <ReactInputMask 
+                    value={timer}
+                    name="timer" 
+                    required
+                    mask="99:99"
+                    placeholder="Timer"
+                    onChange={(e)=>{
+                        setTimer(e.target.value)
+                    }}
+                    />
         </InputDiv>
     );
 }

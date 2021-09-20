@@ -1,21 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import styled from 'styled-components';
 import Swal from 'sweetalert2';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, IconButton} from '@material-ui/core'
 import api from '../../services/api';
-import InputContainer from './InputContainer';
-import TitleDiv from './TitleDiv';
 import './msgFormStyles.css';
-
-const MsgDiv = styled.div`
-    width: 70%;
-    padding: 2%;
-    min-height: 50vh;
-    border: #181f75 2px solid;
-    border-radius: 4px;
-    margin: auto;
-`
 
 const MsgForm = () =>{
     const [messages, setMessages] = useState([]);
@@ -23,7 +11,6 @@ const MsgForm = () =>{
     useEffect(() => {
         const accessAPI = async ()=>{
         const allMessages = await api.get("http://localhost:3333/messages");
-
         const newMessage = allMessages.data.map((msg)=>{
             return{
                 id: msg.id,
@@ -39,9 +26,7 @@ const MsgForm = () =>{
     }, []);
 
     return(
-        <MsgDiv>
-            <TitleDiv/>
-            <InputContainer />
+        <>
             <TableContainer>
                 <Table>
                     <TableHead>
@@ -69,7 +54,7 @@ const MsgForm = () =>{
                     </TableBody>
                 </Table>
             </TableContainer>
-        </MsgDiv>
+        </>
     );
 }
 export default MsgForm;

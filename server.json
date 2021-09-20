@@ -27,6 +27,27 @@
       "trigger": "criou_chave_pix",
       "timer": "12:00",
       "message": "vI  que você criou um chave ?"
+    },
+    {
+      "trigger": "alterou_dados_pessois",
+      "channel": "sms",
+      "timer": "22:22",
+      "message": "aasdfsf",
+      "id": 1631312843769
+    },
+    {
+      "trigger": "alterou_dados_pessois",
+      "channel": "sms",
+      "timer": "2_:__",
+      "message": "aasdfsf",
+      "id": 1631312843770
+    },
+    {
+      "trigger": "alterou_dados_pessois",
+      "channel": "sms",
+      "timer": "2_:__",
+      "message": "aasdfsf",
+      "id": 1631312843771
     }
   ],
   "channels": [

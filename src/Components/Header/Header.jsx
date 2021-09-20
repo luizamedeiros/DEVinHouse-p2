@@ -11,7 +11,7 @@ export const List = styled.li`
     }
     @media screen and (max-width: 768px){
         &:nth-child(2){
-            margin-left: 20%;
+            margin-left: auto;
         }
     }
 `

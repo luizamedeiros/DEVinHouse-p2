@@ -35,15 +35,19 @@ const BarGraph = ()=>{
         datasets: [{
             label: 'Quantidade de chamados por canal', 
             data: generateRandom(),
-            backgroundColor: '#181f75'}
+            backgroundColor: ['blue','green','teal','red']}
         ]
     };
+    const options = {
+        indexAxis: 'y'
+    }
 
     return(
         <Bar
         data={info}
         width={500}
-        height={100}/>
+        height={100}
+        options={options}/>
     );
 }
 export default BarGraph;

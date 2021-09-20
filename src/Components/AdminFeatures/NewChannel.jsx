@@ -15,10 +15,17 @@ text-align: center;
 
 const NewTrigger = ()=>{
     const [newChannel, setNewChannel] = useState('')
+    const yup = require("yup");
+    const validObject = yup.object().shape({
+        channel: yup.string().required("O campo CANAL não pode ser vazio!")
+    })
 
-    function handleSubmit(e){
+    const handleSubmit = async (e)=>{
         try{
             e.preventDefault();
+            await validObject.validate({
+                channel: newChannel
+            })
             api.post('/channels', {
                 id: Date.now(),
                 name: newChannel
@@ -27,10 +34,11 @@ const NewTrigger = ()=>{
                 icon: 'success',
                 text: "Seu registro foi cadastrado com sucesso!"});
         }
-        catch{
+        catch(error){
             Swal.fire({
                 icon: 'error',
-                text: "Houve um problema com o seu cadastro. Tente novamente mais tarde."})
+                title: 'Não foi possível realizar o registro no momento',
+                text: error})
         }
     }
     return(

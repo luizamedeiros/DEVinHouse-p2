@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './Components/Header';
-import MsgForm from './Components/MsgForm';
+import Messages from './Pages/Messages'
 import Dashboard from './Pages/Dashboard';
 import InputMsg from './Components/InputMsg';
 import GlobalStyle from './globalStyles.js';
@@ -20,7 +20,7 @@ function App() {
             <Home />
           </Route>
           <Route exact path="/mensagens">
-            <MsgForm />
+            <Messages />
           </Route>
           <Route path="/novamensagem">
             <InputMsg/>

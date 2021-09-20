@@ -8,15 +8,18 @@ import {Link } from "react-router-dom";
 const MainHeader = styled.div`
     width: 90%;
     display: flex;
-    justify-content: space-around;
     margin: auto;
-    padding: 2%;
+    justify-content: space-around;
+    flex-wrap: wrap;
 `
 const MsgTitle = styled.h1`
-    margin-right: 50%;
     margin-top: 0%;
+    margin-right: 27vw;
     color: #181f75;
-    `
+    @media screen and (max-width: 768px){
+        margin-right: 5vw;
+    }
+`
 
 function TitleDiv(){
     return(

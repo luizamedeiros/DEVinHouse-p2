@@ -3,7 +3,7 @@ import api from '../../services/api';
 import Swal from 'sweetalert2';
 import {Link} from 'react-router-dom';
 import {InputMsgForm, DescriptionArea, SubmitButton, CancelButton, ButtonContainer, Title, SelectDiv} from './InputMsgStyle';
-
+import ReactInputMask from "react-input-mask";
 
 function InputMsg(){
     // para CONSUMIR
@@ -14,13 +14,15 @@ function InputMsg(){
     const [trigger, setTrigger] = useState("");
     const [channel, setChannel] = useState("");
     const [timer, setTimer] = useState([]);
-    const [message, setMessage] = useState([]);
-
-    useEffect(() => {
-        api
-          .get("http://localhost:3333/messages")
-          .then((res) => setMessage(res.data));
-    }, []);
+    const [message, setMessage] = useState();
+    
+    const yup = require("yup");
+    const validObject = yup.object().shape({
+        channel : yup.string().required('Você deve selecionar um canal'),
+        trigger : yup.string().required('Você deve selecionar um gatilho'),
+        timer: yup.string().required('Você deve inserir o tempo'),
+        message: yup.string().required('Você deve inserir uma descrição para o registro').min(5, 'A mensagem deve ter, no mínimo, 5 caracteres'),
+    });
     
     useEffect(() => {
         api
@@ -33,23 +35,24 @@ function InputMsg(){
         .then((res) => setChannelsList(res.data));
     }, []);
 
-    function handleSubmit(e){
+    const handleSubmit = async (e)=>{
         try{
             e.preventDefault();
+            await validObject.validate({channel: channel, trigger: trigger, timer: timer, message: message});
             api.post('/messages', {
                 trigger: trigger,
                 channel: channel, 
                 timer: timer, 
-                message: message
-            })
+                message: message})
             Swal.fire({
                 icon: 'success',
-                text: "Seu registro foi cadastrado com sucesso!"});
+                text: "Seu registro foi cadastrado com sucesso!"})
         }
-        catch{
+        catch(error){
             Swal.fire({
                 icon: 'error',
-                text: "Houve um problema com o seu cadastro. Tente novamente mais tarde."})
+                title: 'Não foi possível realizar o registro no momento',
+                text: error})
         }
     }
     
@@ -57,30 +60,31 @@ function InputMsg(){
             <InputMsgForm onSubmit={handleSubmit}>
                 <Title>Nova mensagem</Title>
                 <SelectDiv>
+                    <label for='gatilho'>Gatilho</label>
                     <select onChange={(e)=>{
                         setTrigger(e.target.value);
-                    }} required>
+                    }} >
                         <option value=""></option>
                         {triggerList.map((op) => (
                         <option key={op.id} value={op.name}>
                             {op.name}
                         </option>))}
                     </select>
+                    <label for='canal'>Canal</label>
                     <select onChange={(e)=>{
                         setChannel(e.target.value);
-                    }}>
+                    }} >
                     <option value=""></option>
                         {channelsList.map((op) => (
                         <option key={op.id} value={op.name}>
                             {op.name}
                         </option>))}               
                     </select>
-                    <input 
+                    <label for='timer'>Timer</label>
+                    <ReactInputMask 
                     value={timer}
-                    name="timer" 
-                    type="time" 
-                    min='00:00'
-                    max='360000:00'
+                    name="timer"
+                    mask="99:99"
                     placeholder="Timer"
                     onChange={(e)=>{
                         setTimer(e.target.value)
@@ -89,10 +93,11 @@ function InputMsg(){
                 </SelectDiv>
                 <DescriptionArea
                 name="message"
-                placeholder="Digite sua mensagem"
+                placeholder="Digite sua mensagem..."
                 onChange={(e)=>{
                     setMessage(e.target.value);
-                }}/>
+                }}
+                />
                 <ButtonContainer>
                     <Link to='/mensagens'>
                         <CancelButton>Cancelar</CancelButton>
