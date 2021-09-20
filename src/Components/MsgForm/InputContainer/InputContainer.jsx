@@ -38,7 +38,7 @@ const InputContainer=()=>{
     return(
         <InputDiv>
             <label for='gatilho'>Gatilho</label>
-            <select name='gatilho' required>
+            <select style={{width: 'inherit'}} name='gatilho' required>
               <option value=""></option>
                 {triggers.map((op) => (
                   <option key={op.id} value={op.id}>
@@ -46,7 +46,7 @@ const InputContainer=()=>{
                   </option>))}
             </select>
             <label for='canal'>Canal</label>
-            <select required>
+            <select style={{width: 'inherit'}} required>
               <option value=""></option>
                 {channels.map((op) => (
                   <option key={op.id} value={op.id}>
@@ -55,15 +55,16 @@ const InputContainer=()=>{
             </select>
             <label for='timer'>Timer</label>
             <ReactInputMask 
-                    value={timer}
-                    name="timer" 
-                    required
-                    mask="99:99"
-                    placeholder="Timer"
-                    onChange={(e)=>{
-                        setTimer(e.target.value)
-                    }}
-                    />
+              style={{width: 'inherit'}}
+              value={timer}
+              name="timer" 
+              required
+              mask="99:99"
+              placeholder="Timer"
+              onChange={(e)=>{
+                  setTimer(e.target.value)
+              }}
+            />
             <Link to="#">
               <IconButton> <SearchIcon style={{color: '#181f75'}}/> </IconButton>
             </Link>
